@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  --btn: #735dfe;
+  --purple: #4d374a;
+  --purple-lite: #6e4669;
+  --green-main: #16a085;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:focus {
+  outline: none;
+}
+
+a:focus-visible {
+  outline: none;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: currentColor;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1rem 1fr 1rem;
+  grid-template-rows: 6rem 1fr 6rem;
+}
+.grid > * {
+  grid-column: 2;
+  min-width: 0;
+}
+@media screen and (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1.3rem 1fr 1.3rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .grid {
+    grid-template-columns: 1fr 1200px 1fr;
+  }
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* APP */
+
+#root {
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+}
+.app::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 35%;
+  width: 100%;
+  z-index: -1;
+  background: var(--green-main) url(./components/layout/img/bg.svg);
+}
+
+/* links */
+.link {
+  padding: 0.8rem 0 0.4rem;
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  border-bottom: 0.4rem solid transparent;
+  transition: all 0.4s ease-in-out;
+}
+
+.link:hover {
+  border-bottom: 0.4rem solid #0d5a4b;
+  background: #0d5a4b;
+}
+/* selected link */
+.selected {
+  border-bottom: 0.4rem solid #0d5a4b;
+}
